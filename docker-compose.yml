@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    image: "mysql:8.0"
+    container_name: estagiario-banco
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: "redmaxx"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: estagiario
+      MYSQL_PASSWORD: estagiario
+    ports:
+      - "3306:3306"
